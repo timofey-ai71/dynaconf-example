@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+dist/
+
+# Virtual environment
+.venv
+
+# Python tools
+.pytest_cache/
+.ruff_cache/
+
+# IDEs
+.cursor/
+.idea/
+.vscode/
+
+# OS files
+.DS_Store

@@ -1,0 +1,53 @@
+[default]
+APP_NAME = "ask71"
+APP_ENVIRONMENT = "development"
+PRODUCT_NAME = "ask71"
+PRODUCT_TYPE = "be"
+FASTAPI_ROOT_PATH = "/"
+USER_AGENT = "random"
+LOG_LEVEL = "debug"
+LOG_DIR = "./var/logs"
+
+[default.DATABASE]
+USER = "admin"
+# Note: no password here, should come from environment variable
+HOST = "localhost"
+PORT = 5353
+DB = "local_db"
+SCHEMAS = ["knowledge_service"]
+
+[default.VECTOR_DATABASE]
+RETRY_ATTEMPTS = 5
+RETRY_WAIT_TIME = 3
+INIT_TIMEOUT_SEC = 30
+QUERY_TIMEOUT_SEC = 60
+
+[local]
+APP_ENVIRONMENT = "local"
+
+[development]
+APP_ENVIRONMENT = "development"
+
+[development.DATABASE]
+USER = "admin"
+HOST = "dev_db_host"
+PORT = 5353
+DB = "kms_dev_db"
+
+[staging]
+APP_ENVIRONMENT = "staging"
+
+[staging.DATABASE]
+USER = "admin"
+HOST = "stg_db_host"
+PORT = 5353
+DB = "kms_stg_db"
+
+[production]
+APP_ENVIRONMENT = "production"
+
+[production.DATABASE]
+USER = "admin"
+HOST = "prod_db_host"
+PORT = 5353
+DB = "kms_prod_db"

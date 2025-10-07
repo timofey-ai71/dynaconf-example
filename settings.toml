@@ -1,0 +1,9 @@
+# Configuration file for local development.
+# This file is not normally committed to version control.
+
+[local.database]
+USER = "timofey"
+# no password here, provided in .env
+HOST = "localhost"
+PORT = 56
+DB = "timofey_db"

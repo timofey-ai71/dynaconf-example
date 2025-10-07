@@ -1,0 +1,49 @@
+[build-system]
+build-backend = "uv_build"
+requires = [ "uv-build>=0.8.8" ]
+
+[project]
+name = "dynaconf-example"
+version = "0.0.1"
+description = "Dynaconf example"
+readme = "README.md"
+authors = [
+  { name = "Timofey Urbanovich", email = "timofey.urbanovich@ai71.ai" },
+]
+requires-python = ">=3.12"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+  "dynaconf>=3.2.11",
+  "pydantic>=2.11.7",
+]
+
+[dependency-groups]
+dev = [
+  "deptry",
+  "pre-commit",
+  "pyright",
+  "ruff",
+]
+
+[tool.ruff]
+line-length = 99
+fix = true
+format.docstring-code-format = true
+lint.select = [ "ALL" ]
+lint.pydocstyle.convention = "google"
+
+[tool.deptry]
+known_first_party = [ "dynaconf_example" ]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+venvPath = "."
+venv = ".venv"
+
+[tool.uv.build-backend]
+module-name = [ "dynaconf_example" ]
+source-include = [ "src/dynaconf_example/config/settings.toml" ]
